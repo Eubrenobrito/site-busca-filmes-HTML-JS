@@ -70,3 +70,16 @@ body {
       border-bottom: 0;
     }
   }
+
+.thumbnail {
+  height: 360px;
+  text-align: center;
+}
+.thumbnail img{
+  height: 230px;
+}
+
+#img-poster {
+  border: 1px solid  black;
+  text-align: center;
+}
