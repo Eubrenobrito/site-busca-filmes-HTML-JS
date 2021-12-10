@@ -1,20 +1,17 @@
+function mostrarFilme() {
+  var filmeID = sessionStorage.getItem("filmeID");
 
-function mostrarFilme(){
-    var filmeID = sessionStorage.getItem('filmeID');
-  
-    axios.get('https://www.omdbapi.com?apikey=623bf177&i=' + filmeID)
-            .then(function (response) {
-              var filme = response.data;
-              console.log(filme);
+  axios
+    .get("https://www.omdbapi.com?apikey=623bf177&i=" + filmeID)
+    .then(function (response) {
+      var filme = response.data;
+      console.log(filme);
 
-              var detalheFilme = `
+      var detalheFilme = `
                     <div class="col-md-6">
                         <img src="${filme.Poster}" class="img-rounded">
                             <h3><strong>${filme.Title}</strong></h3>
                     </div>
-                                              
-                        
-                      
                     <div class="col-md-6">
                         <div class="well clearfix">
                                 <ul class="list-group">
@@ -36,20 +33,13 @@ function mostrarFilme(){
                                 <a href="index.html" class="btn btn-default" pull-right">Retornar</a>
                         </div>    
                     </div>
-              `
-  
-              document.getElementById('detalheFilme').innerHTML = detalheFilme;
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-  }
+              `;
 
-
+      document.getElementById("detalheFilme").innerHTML = detalheFilme;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 
 mostrarFilme();
-
-
-
-
-
